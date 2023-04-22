@@ -12,9 +12,15 @@
   <body>
     <div class="container">
       <nav>
+        
         <%= link_to "Sign Up", new_user_path %>
         <%= link_to "Add to database", new_astronomical_item_path %>
         <%= link_to "All Items", astronomical_items_path %>
+
+        <% if @current_user.present? %>
+          <p class="logged_in_as">Logged in as <%= @current_user.name%></p>
+        <% end %>
+        
       </nav>
       <%= yield %>
     </div>

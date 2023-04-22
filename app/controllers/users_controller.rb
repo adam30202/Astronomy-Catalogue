@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new params_user
     if @user.save
       session[:user_id] = @user.id 
-      redirect_to astronomical_items_path, notice: "Welcome #{@user.name} to the Astronomy Catalogue"
+      redirect_to astronomical_items_path
     else
       render :new
     end
