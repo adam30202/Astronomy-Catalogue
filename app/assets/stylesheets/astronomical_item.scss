@@ -1,0 +1,32 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: rgb(37, 37, 37);
+}
+
+a {
+    color: white;
+}
+
+.feature {
+    max-width: 900px;
+}
+
+.index_container {
+    display: grid;
+}
+
+.index_item {
+    display: inline-block;
+    margin-bottom: 1em;
+    width: auto;
+}
+
+label {
+    display: block;
+}

@@ -1,0 +1,12 @@
+
+
+<h1><%= @astronomical_item.name %> - <%= @astronomical_item.category %></h1>
+
+<p><%= @astronomical_item.summary %></p>
+
+<%= image_tag @astronomical_item.image, :class => "feature" if @astronomical_item.image.present? %>
+
+<div class="edit_delete">
+    <%= link_to "Edit Entry", edit_astronomical_item_path(@astronomical_item.id) %>
+    <%= link_to "Delete Entry", @astronomical_item, :method => :delete, :data => { :confirm => "Are you sure?" } %>
+</div>
