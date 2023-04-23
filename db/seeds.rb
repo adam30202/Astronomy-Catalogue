@@ -47,6 +47,9 @@ u2.astronomical_items << a2
 a1.bookmarks << b1
 u1.bookmarks << b1
 
+a2.bookmarks << b2
+u1.bookmarks << b2
+
 a1.comments << c1
 a1.comments << c2
 a1.comments << c3
@@ -55,9 +58,6 @@ u1.comments << c1
 u1.comments << c2
 u1.comments << c3
 
-
-# a2.bookmarks << b2
-# u2.bookmarks << b2
 
 # a2.comments << c2
 # u2.comments << c2

@@ -32,5 +32,9 @@ label {
 }
 
 .logged_in_as {
-    text-align: right;
+    
+}
+
+.bookmark_on::after {
+    content: " - New Text";
 }

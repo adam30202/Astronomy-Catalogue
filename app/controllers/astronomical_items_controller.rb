@@ -1,11 +1,15 @@
 class AstronomicalItemsController < ApplicationController
 
+  before_action :check_for_login
+
   def new
     @astronomical_item = AstronomicalItem.new
   end
 
   def create
-    astronomical_item = AstronomicalItem.create params_astronomical_item
+    astronomical_item = AstronomicalItem.create params_astronomical_item #why use create and not .new with .create
+    astronomical_item.user_id = @current_user.id
+    astronomical_item.save
     redirect_to astronomical_item
   end
 
@@ -26,6 +30,7 @@ class AstronomicalItemsController < ApplicationController
 
   def show
     @astronomical_item = AstronomicalItem.find params[:id]
+    @user = User.find @astronomical_item.user_id
   end
 
   def destroy

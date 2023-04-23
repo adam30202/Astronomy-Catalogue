@@ -1,0 +1,8 @@
+<h2>Your bookmarks</h2>
+
+
+<ul>
+    <% @bookmarked_astronomical_items.each do |bookmarked_item| %>
+        <li><%= link_to bookmarked_item.name, astronomical_item_path(bookmarked_item.id) %></li>
+    <% end %>
+</ul>
