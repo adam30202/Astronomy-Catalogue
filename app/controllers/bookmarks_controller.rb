@@ -14,11 +14,11 @@ class BookmarksController < ApplicationController
 
         if bookmark_check.nil?
             bookmark.save
-            redirect_to astronomical_item_path(params[:astronomical_item_id]) #Not sure if great way of doing this
+            redirect_to astronomical_item_path(params[:astronomical_item_id])
         else
             bookmark_check.delete
             bookmark.delete
-            redirect_to astronomical_item_path(params[:astronomical_item_id]) #Not sure if great way of doing this
+            redirect_to astronomical_item_path(params[:astronomical_item_id])
         end
 
     end

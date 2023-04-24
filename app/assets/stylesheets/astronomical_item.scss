@@ -15,6 +15,7 @@ a {
 
 .feature {
     max-width: 900px;
+    display: contain;
 }
 
 .index_container {
@@ -35,6 +36,15 @@ label {
     
 }
 
+textarea {
+    max-width: 252px;
+    max-height: 56px;
+}
+
 .bookmark_on::after {
     content: " - New Text";
+}
+
+.mb-3 {
+    max-width: 500px;
 }

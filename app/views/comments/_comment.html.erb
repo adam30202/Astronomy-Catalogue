@@ -6,5 +6,8 @@
 <p>
 <%= comment.content %>
 </p>
+<% if @current_user.id == comment.user.id %>
+    <p><small><%= link_to "Delete", astronomical_item_comment_path(comment.id), :method => :delete, :data => { :confirm => "Are you sure?" } %></small></p>
+<% end %>
 <hr>
 </article>

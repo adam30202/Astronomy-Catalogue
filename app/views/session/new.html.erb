@@ -4,14 +4,16 @@
     <p><%= flash[:error] %></p>
 <% end %>
 
+<div class="mb-3"> 
 <%= form_for login_path do %>
 
-    <%= label_tag :email %>
-    <%= email_field_tag :email %>
+    <%= label_tag :email, nil, :class => 'form-label' %>
+    <%= email_field_tag :email, nil, :class => 'form-control' %>
 
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+    <%= label_tag :password, nil, :class => 'form-label' %>
+    <%= password_field_tag :password, nil, :class => 'form-control' %>
     
-    <%= submit_tag "Sign in" %>
+    <%= submit_tag "Sign in", :class => "btn btn-light" %>
 
 <% end %>
+</div></div>
