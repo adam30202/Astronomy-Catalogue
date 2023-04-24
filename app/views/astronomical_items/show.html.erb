@@ -8,24 +8,24 @@
 
 <p>Added by <%= @item_author.name %></p>
 
-<div class="bookmark_button">
-<% if (@current_user.bookmarks.find_by astronomical_item_id: @astronomical_item.id) == nil %>
-   <%= button_to "Bookmark Item", bookmarks_path, params: { astronomical_item_id: @astronomical_item.id  } %>
-<% else %>
-    <%= button_to "Remove Bookmark", bookmarks_path, params: { astronomical_item_id: @astronomical_item.id  } %>
-<% end %>
-</div>
-
 <% if @current_user == @item_author %>
 <div class="edit_delete">
-    <%= link_to "Edit Entry", edit_astronomical_item_path(@astronomical_item.id) %>
-    <%= link_to "Delete Entry", @astronomical_item, :method => :delete, :data => { :confirm => "Are you sure?" } %>
+    <%= link_to "Edit Entry", edit_astronomical_item_path(@astronomical_item.id), :class => "link-primary" %>
+    <%= link_to "Delete Entry", @astronomical_item, :method => :delete, :data => { :confirm => "Are you sure?" }, :class => "link-primary" %>
 </div>
 <% end %>
-
+<br>
+<div class="bookmark_button">
+<% if (@current_user.bookmarks.find_by astronomical_item_id: @astronomical_item.id) == nil %>
+   <%= button_to "Bookmark Item", bookmarks_path, params: { astronomical_item_id: @astronomical_item.id  }, :class => "btn btn-primary btn-sm" %>
+<% else %>
+    <%= button_to "Remove Bookmark", bookmarks_path, params: { astronomical_item_id: @astronomical_item.id  }, :class => "btn btn-dark btn-sm" %>
+<% end %>
+</div>
+<br>
 <p>
 <strong>Comments:</strong>
-<%= render @astronomical_item.comments.order(created_at: :desc) %>
 <%= render :partial => "comments/form", params: { astronomical_item_id: @astronomical_item.id  } %>
-
+<br>
+<%= render @astronomical_item.comments.order(created_at: :desc) %>
 </p>
