@@ -1,0 +1,16 @@
+
+
+<%#why does :comment work?%>
+
+<%= form_for(:comment, :url => astronomical_item_comments_path(@astronomical_item.id)) do |f|  %> 
+
+    <%= f.label :content %>
+    <%= f.text_field :content %> 
+
+    <%= f.hidden_field :user_id, value: @current_user.id %>
+
+    <%= f.hidden_field :astronomical_item_id, value: @astronomical_item.id %>
+
+    <%= f.submit %>
+
+<% end %>

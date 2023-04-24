@@ -55,8 +55,8 @@ a1.comments << c2
 a1.comments << c3
 
 u1.comments << c1
-u1.comments << c2
-u1.comments << c3
+u2.comments << c2
+u2.comments << c3
 
 
 # a2.comments << c2

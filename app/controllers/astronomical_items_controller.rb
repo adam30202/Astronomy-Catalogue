@@ -30,7 +30,7 @@ class AstronomicalItemsController < ApplicationController
 
   def show
     @astronomical_item = AstronomicalItem.find params[:id]
-    @user = User.find @astronomical_item.user_id
+    @item_author = User.find @astronomical_item.user_id
   end
 
   def destroy

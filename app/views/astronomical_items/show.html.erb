@@ -6,7 +6,7 @@
 
 <%= image_tag @astronomical_item.image, :class => "feature" if @astronomical_item.image.present? %>
 
-<p>Added by <%= @user.name %></p>
+<p>Added by <%= @item_author.name %></p>
 
 <div class="bookmark_button">
 <% if (@current_user.bookmarks.find_by astronomical_item_id: @astronomical_item.id) == nil %>
@@ -16,10 +16,16 @@
 <% end %>
 </div>
 
-<% if @current_user == @user %>
+<% if @current_user == @item_author %>
 <div class="edit_delete">
     <%= link_to "Edit Entry", edit_astronomical_item_path(@astronomical_item.id) %>
     <%= link_to "Delete Entry", @astronomical_item, :method => :delete, :data => { :confirm => "Are you sure?" } %>
 </div>
 <% end %>
 
+<p>
+<strong>Comments:</strong>
+<%= render @astronomical_item.comments.order(created_at: :desc) %>
+<%= render :partial => "comments/form", params: { astronomical_item_id: @astronomical_item.id  } %>
+
+</p>
