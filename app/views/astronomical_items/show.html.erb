@@ -2,7 +2,7 @@
 
 <h1><%= @astronomical_item.name %> - <%= @astronomical_item.category %></h1>
 
-<p><%= @astronomical_item.summary %></p>
+<p class="summary"><%= @astronomical_item.summary %></p>
 
 <%= image_tag @astronomical_item.image, :class => "feature" if @astronomical_item.image.present? %>
 
