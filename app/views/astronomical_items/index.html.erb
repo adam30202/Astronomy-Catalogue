@@ -1,12 +1,12 @@
-<h1>Astronomical Catalouge</h1>
+<h1><u>Astronomical Catalouge</u></h1>
 
 
 <div class="index_container">
+    <ul>
+        <% @astronomical_items.each do |astronomical_item| %>
 
-<% @astronomical_items.each do |astronomical_item| %>
+            <li><%= link_to astronomical_item.name, astronomical_item_path(astronomical_item.id), :class => "index_item" %></li>
 
-    <%= link_to astronomical_item.name, astronomical_item_path(astronomical_item.id), :class => "index_item" %>
-
-<% end %>
-
+        <% end %>
+    </ul>
 </div>

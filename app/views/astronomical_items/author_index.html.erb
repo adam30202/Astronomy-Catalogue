@@ -1,6 +1,9 @@
-<h2>Your Astronomical Objects</h2>
-<ul>
-    <% @astronomical_items.each do |astronomical_item| %>
-        <li><%= link_to astronomical_item.name, astronomical_item_path(astronomical_item.id) %></li>
-    <% end %>
-</ul>
+<h2><u>Your Astronomical Objects</u></h2>
+
+<div class="index_container">
+    <ul>
+        <% @astronomical_items.each do |astronomical_item| %>
+            <li><%= link_to astronomical_item.name, astronomical_item_path(astronomical_item.id), :class => "index_item" %></li>
+        <% end %>
+    </ul>
+</div>

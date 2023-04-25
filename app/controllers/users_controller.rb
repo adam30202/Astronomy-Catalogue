@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new params_user
     if @user.save
       session[:user_id] = @user.id # add notice for successful creation
-      redirect_to astronomical_items_path
+      redirect_to root_path
     else
       render :new
     end

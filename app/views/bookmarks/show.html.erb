@@ -1,8 +1,9 @@
-<h2>Your bookmarks</h2>
+<h2><u>Your bookmarks</u></h2>
 
-
-<ul>
-    <% @bookmarked_astronomical_items.each do |bookmarked_item| %>
-        <li><%= link_to bookmarked_item.name, astronomical_item_path(bookmarked_item.id) %></li>
-    <% end %>
-</ul>
+<div class="index_container">
+    <ul>
+        <% @bookmarked_astronomical_items.each do |bookmarked_item| %>
+            <li><%= link_to bookmarked_item.name, astronomical_item_path(bookmarked_item.id), :class => 'index_item' %></li>
+        <% end %>
+    </ul>
+</div>

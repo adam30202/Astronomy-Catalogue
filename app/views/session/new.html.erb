@@ -1,7 +1,7 @@
 <h1>Sign in</h1>
 
 <% if flash[:error].present? %>
-    <p><%= flash[:error] %></p>
+    <p class="flash_error"><%= flash[:error] %></p>
 <% end %>
 
 <div class="mb-3"> 
@@ -12,7 +12,7 @@
 
     <%= label_tag :password, nil, :class => 'form-label' %>
     <%= password_field_tag :password, nil, :class => 'form-control' %>
-    
+    <br>
     <%= submit_tag "Sign in", :class => "btn btn-light" %>
 
 <% end %>
