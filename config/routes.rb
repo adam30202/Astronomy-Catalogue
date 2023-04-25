@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :astronomical_items, path: :astronomycatalogue do 
     resources :comments, :only => [:create, :destroy ]
   end
-
+  get '/your_catalogue' => 'astronomical_items#author_index'
+  
   resources :users, :only => [:new, :create ]
   
 

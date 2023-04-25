@@ -2,6 +2,10 @@ class AstronomicalItemsController < ApplicationController
 
   before_action :check_for_login
 
+  def author_index
+    @astronomical_items = AstronomicalItem.where(user_id: @current_user.id)
+  end
+  
   def new
     @astronomical_item = AstronomicalItem.new
   end
@@ -27,6 +31,8 @@ class AstronomicalItemsController < ApplicationController
   def index
     @astronomical_items = AstronomicalItem.all
   end
+
+  
 
   def show
     @astronomical_item = AstronomicalItem.find params[:id]

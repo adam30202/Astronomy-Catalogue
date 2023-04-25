@@ -1,16 +1,16 @@
 <%= form_for @astronomical_item do |f| %>
 
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :required => true %>
 
     <%= f.label :category %>
-    <%= f.text_field :category %>
+    <%= f.text_field :category, :required => true %>
 
     <%= f.label :summary %>
-    <%= f.text_area :summary %>
+    <%= f.text_area :summary, :required => true %>
 
     <%= f.label :image %>
-    <%= f.url_field :image %>
+    <%= f.url_field :image, :required => true %>
 
     <%= f.submit %>
 
