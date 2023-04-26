@@ -1,6 +1,10 @@
 
+<% if flash[:error].present? %>
+    <p class="flash_login_error"><%= flash[:error] %></p>
+<% end %>
+
 <div class='add_edit_form'>
-    <%= form_for @astronomical_item do |f| %>
+    <%= form_for(@astronomical_item, :html => { :multipart => true }) do |f| %>
 
         <%= f.label :name, :class => 'form-label' %>
         <%= f.text_field :name, placeholder: "Object's Name", :required => true, :class => 'form-control' %>
@@ -12,7 +16,8 @@
         <%= f.text_area :summary, placeholder: "Brief description of the object", :required => true, :class => 'form-control' %>
 
         <%= f.label :image, :class => 'form-label' %>
-        <%= f.url_field :image, placeholder: "Image URL", :required => true, :class => 'form-control' %>
+        <%= f.cl_image_upload :image, :required => true, :class => 'form-control' %> 
+        <br>
         <br>
         <%= f.submit :class => 'btn btn-primary' %>
 

@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dnwt2kr32
+  api_key: '724774266381275'
+  api_secret: B9dLKlKef5_OmpXkuQu9g3xI3FI
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dnwt2kr32
+  api_key: '724774266381275'
+  api_secret: B9dLKlKef5_OmpXkuQu9g3xI3FI
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dnwt2kr32
+  api_key: '724774266381275'
+  api_secret: B9dLKlKef5_OmpXkuQu9g3xI3FI
+  enhance_image_tag: true
+  static_file_support: false

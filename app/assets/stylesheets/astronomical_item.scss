@@ -3,7 +3,6 @@
 body {
     background-color: black;
     color: white;
-    font-size: 20px;
     font-family: 'Trispace', sans-serif;
 }
 
@@ -21,8 +20,12 @@ nav {
     padding-bottom: 7px;
 }
 
-.summary {
+.nav {
     font-size: 20px;
+}
+
+.summary {
+    font-size: 18px;
     margin-left: 30px;
     margin-right: 30px;
     text-align: justify;
@@ -40,6 +43,7 @@ nav {
 
 .index_container {
     padding: 20px;
+    font-size: 18px;
 }
 
 h1 {
@@ -93,7 +97,11 @@ label {
     margin-right: auto;
 }
 
-.flash_error {
+.flash_login_error {
     color: red;
+    text-align: center;
+}
+
+.empty_list {
     text-align: center;
 }

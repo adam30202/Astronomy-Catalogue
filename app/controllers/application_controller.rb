@@ -9,7 +9,17 @@ class ApplicationController < ActionController::Base
     end
 
     def check_for_login
-        redirect_to login_path unless  @current_user.present?
+        redirect_to login_path unless @current_user.present?
     end
+
+    def bookmark_text
+        if @bookmark_exists
+            return "Remove Bookmark"
+        else
+            return "Bookmark"
+        end
+    end
+
+    helper_method :bookmark_text
 
 end

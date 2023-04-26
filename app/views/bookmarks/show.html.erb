@@ -1,9 +1,13 @@
 <h2><u>Your bookmarks</u></h2>
 
-<div class="index_container">
-    <ul>
-        <% @bookmarked_astronomical_items.each do |bookmarked_item| %>
-            <li><%= link_to bookmarked_item.name, astronomical_item_path(bookmarked_item.id), :class => 'index_item' %></li>
-        <% end %>
-    </ul>
-</div>
+<% if @bookmarked_astronomical_items.present? %>
+    <div class="index_container">
+        <ul>
+            <% @bookmarked_astronomical_items.each do |bookmarked_item| %>
+                <li><%= link_to bookmarked_item.name, astronomical_item_path(bookmarked_item.id), :class => 'index_item' %></li>
+            <% end %>
+        </ul>
+    </div>
+<% else %>
+    <p class="empty_list">You have not added any objects to the catalogue</p>
+<% end %>

@@ -11,10 +11,20 @@ class AstronomicalItemsController < ApplicationController
   end
 
   def create
-    astronomical_item = AstronomicalItem.create params_astronomical_item #why use create and not .new with .create
+
+    astronomical_item = AstronomicalItem.new params_astronomical_item #why use create and not .new with .create
     astronomical_item.user_id = @current_user.id
-    astronomical_item.save
-    redirect_to astronomical_item
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      astronomical_item.image = req["public_id"]
+      astronomical_item.save
+      redirect_to astronomical_item
+    else
+      flash[:error] = "Please upload an image"
+      astronomical_item.delete
+      redirect_to new_astronomical_item_path
+    end
+    
   end
 
 
@@ -25,6 +35,13 @@ class AstronomicalItemsController < ApplicationController
   def update
     astronomical_item = AstronomicalItem.find params[:id]
     astronomical_item.update params_astronomical_item
+
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      astronomical_item.image = req["public_id"]
+      astronomical_item.save
+    end
+    
     redirect_to astronomical_item
   end
 
@@ -32,11 +49,10 @@ class AstronomicalItemsController < ApplicationController
     @astronomical_items = AstronomicalItem.all
   end
 
-  
-
   def show
     @astronomical_item = AstronomicalItem.find params[:id]
     @item_author = User.find @astronomical_item.user_id
+    @bookmark_exists = Bookmark.where(user_id: @current_user.id, astronomical_item_id: @astronomical_item.id ) == [] ? false : true
   end
 
   def destroy

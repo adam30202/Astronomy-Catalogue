@@ -1,5 +1,7 @@
 class BookmarksController < ApplicationController
 
+    before_action :check_for_login
+
     def show
         # refactor this/HTML
         @bookmarked_astronomical_items = []
@@ -10,17 +12,14 @@ class BookmarksController < ApplicationController
         
     def new
         bookmark_check = Bookmark.find_by user_id: @current_user.id, astronomical_item_id: params[:astronomical_item_id]
-        bookmark = Bookmark.new(:user_id => @current_user.id, :astronomical_item_id => params[:astronomical_item_id])
-
+        
         if bookmark_check.nil?
-            bookmark.save
-            redirect_to astronomical_item_path(params[:astronomical_item_id])
+            bookmark = Bookmark.create(:user_id => @current_user.id, :astronomical_item_id => params[:astronomical_item_id])
+            @bookmark_exists = true
         else
             bookmark_check.delete
-            bookmark.delete
-            redirect_to astronomical_item_path(params[:astronomical_item_id])
+            @bookmark_exists = false
         end
-
     end
 
 end

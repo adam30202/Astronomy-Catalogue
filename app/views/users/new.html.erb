@@ -4,7 +4,7 @@
 <%= form_for @user do |f| %>
 
 <% if @user.errors.any? %>
-    <div class="login_error">
+    <div class="flash_login_error">
         <ul>
         <% @user.errors.full_messages.each do |error| %>
             <li><%= error %></li>
