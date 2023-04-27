@@ -1,4 +1,7 @@
+
+<div>
 <%= search_form_for(@query, url: search_path, :class => "d-flex search_bar") do |f| %>
-    <%= f.search_field :name_or_summary_or_category_or_user_name_i_cont_any, placeholder: "Search...", :class => "form-control me-2" %>
+    <%= f.search_field :name_or_category_or_user_name_i_cont_any, placeholder: "Venus...", :class => "form-control me-2" %>
     <%= f.submit "Search Catalouge", :class => "btn btn-primary" %>
 <% end %>
+</div>

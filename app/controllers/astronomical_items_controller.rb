@@ -46,7 +46,7 @@ class AstronomicalItemsController < ApplicationController
   end
 
   def index
-    @astronomical_items = AstronomicalItem.all
+    @astronomical_items = AstronomicalItem.paginate(page: params[:page], per_page: 10)
   end
 
   def show

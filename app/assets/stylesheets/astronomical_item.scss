@@ -13,6 +13,8 @@ body {
     --bs-gutter-x: 0;
 }
 
+// Nav CSS
+
 nav {
     background-image: url(navbackground1.jpg);
     background-size: cover;
@@ -22,6 +24,18 @@ nav {
 
 .nav {
     font-size: 20px;
+
+}
+
+.nav-link {
+    color: #ffffff;
+}
+
+.dropdown-menu {
+    --bs-dropdown-bg: #313740;
+    --bs-dropdown-link-color: #ffffff;
+    --bs-dropdown-link-hover-color: #3683ea;
+    --bs-dropdown-link-hover-bg: none;
 }
 
 .summary {
@@ -49,6 +63,8 @@ nav {
 h1 {
     margin-top: 30px;
     margin-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 h2 {
@@ -84,6 +100,12 @@ label {
     max-width: auto;
     margin-left: 10%;
     margin-right: 10%;
+}
+
+.form-control {
+    background-color: #000000;
+    border: 1px solid #ffffff;
+    color: white;
 }
 
 .mb-3 {
@@ -125,3 +147,54 @@ label {
     font-size: 18px;
     color: #cccccc;
 }
+
+// Pages CSS (from will_paginate css docs)
+
+.digg_pagination {
+    background: black;
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: default;
+    /* self-clearing method: */ }
+    .digg_pagination a, .digg_pagination span, .digg_pagination em {
+      padding: 0.2em 0.5em;
+      display: block;
+      float: left;
+      margin-right: 1px; }
+    .digg_pagination .disabled {
+      color: #847878;
+      border: 1px solid #847878; }
+    .digg_pagination .current {
+      font-style: normal;
+      font-weight: bold;
+      background: #0075ff;
+      color: white;
+      border: 1px solid #0075ff; }
+    .digg_pagination a {
+      text-decoration: none;
+      color: #0075ff;;
+      border: 1px solid #0075ff; }
+      .digg_pagination a:hover, .digg_pagination a:focus {
+        color: #ffffff;
+        border-color: #ffffff; }
+    .digg_pagination .page_info {
+      background: #2e6ab1;
+      color: white;
+      padding: 0.4em 0.6em;
+      width: 22em;
+      margin-bottom: 0.3em;
+      text-align: center; }
+      .digg_pagination .page_info b {
+        color: #000033;
+        background: #0075ff;
+        padding: 0.1em 0.25em; }
+    .digg_pagination:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    * html .digg_pagination {
+      height: 1%; }
+    *:first-child + html .digg_pagination {
+      overflow: hidden; }
