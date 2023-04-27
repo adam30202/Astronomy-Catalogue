@@ -5,3 +5,9 @@ options:
   label:
     fly_launch_runtime: rails
   postgresql: true
+  packages:
+    deploy:
+    - procps
+    - net-tools
+    - traceroute
+    - iputils-ping

@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'search', :to => "search#index"
   root :to => "pages#about"
-  
+  get 'search', :to => "search#index"
   get '/astronomycatalogue/your_catalogue' => 'astronomical_items#author_index'
   resources :astronomical_items, path: :astronomycatalogue do 
     resources :comments, :only => [:create, :destroy ]

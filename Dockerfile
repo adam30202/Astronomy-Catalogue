@@ -66,7 +66,7 @@ FROM base
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y postgresql-client && \
+    apt-get install --no-install-recommends -y iputils-ping net-tools postgresql-client procps traceroute && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Run and own the application files as a non-root user for security
