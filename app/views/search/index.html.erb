@@ -1,23 +1,22 @@
-<h1><%= pluralize(@astronomical_item.count, "Result") %> </h1>
+<h1><%= pluralize(@astronomical_items.count, "Result") %> </h1>
+
 <div class="table">
+    <table class="table table-dark table-striped">
+        <thead>
+            <th class="table_head"><%= sort_link(@query, :name, "Object Name", default_order: :asc)%></th>
+            <th class="table_head"><%= sort_link(@query, :category, "Category") %></th>
+            <th class="table_head">Author</th>
+        </thead>
 
-        <table class="table table-dark table-striped">
-            <thead>
-                <th><%= sort_link(@query, :name, "Name", default_order: :asc)%></th>
-                <th><%= sort_link(@query, :category, "Category") %></th>
-                <th><%= sort_link(@query, :user, "Author") %></th>
-            </thead>
-
-            <tbody>
-                <% @astronomical_item.each do |astronomical_item| %>
-                    <tr>
-                        <td> <%= link_to astronomical_item.name, astronomical_item %></td>
-                        <td> <%= astronomical_item.category %> </td>
-                        <td> <%= astronomical_item.user.name %> </td>
-                    </tr>
-                <% end %>
-            </tbody>
-        </table>
-
-    </div>
+        <tbody>
+            <% @astronomical_items.each do |astronomical_item| %>
+                <tr>
+                    <td> <%= link_to astronomical_item.name, astronomical_item %></td>
+                    <td> <%= astronomical_item.category %> </td>
+                    <td> <%= astronomical_item.user.name %> </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
 

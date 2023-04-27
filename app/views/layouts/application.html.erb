@@ -18,24 +18,24 @@
           <ol class="nav justify-content-center">
               <li class="nav-item">
                 <%= link_to 'About', root_path, :class => "nav-link active" %>
-              </li>
+              </li> 
             <% if @current_user.present? %>
               <li class="nav-item">
                 <%= link_to "Add to Database", new_astronomical_item_path, :class => "nav-link active" %>
               </li>
-              <%# <li class="nav-item">
+              <li class="nav-item">
                 <%= link_to "All Objects", astronomical_items_path, :class => "nav-link active" %>
-              <%# </li> %> 
+              </li> 
               <li class="nav-item">
                 <%= link_to "My Objects", astronomycatalogue_your_catalogue_path, :class => "nav-link active" %>
               </li>
               <li class="nav-item">
                 <%= link_to "My Bookmarks", bookmarks_path, :class => "nav-link active" %>
               </li>
-              <%= render :partial => "search/form"%>
               <li class="nav-item">
                 <%= link_to "Log out #{@current_user.name}", login_path, :method => :delete, :class => "nav-link active" %>
-              </li>
+              </li> 
+              <%= render :partial => "search/form"%>
             <% else %>
               <li class="nav-item">
                 <%= link_to "Sign Up", new_user_path, :class => "nav-link active" %>

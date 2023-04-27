@@ -106,7 +106,7 @@ label {
     text-align: center;
 }
 
-// Search bar CSS
+// Search bar & index tables CSS
 
 .table {
     padding-left: 30px;
@@ -119,4 +119,9 @@ label {
 
 .table a {
     text-decoration: underline;
+}
+
+.table_head {
+    font-size: 18px;
+    color: #cccccc;
 }

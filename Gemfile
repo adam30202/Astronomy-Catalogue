@@ -32,6 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'cloudinary'
+gem 'will_paginate', '~> 3.3'
 
 gem 'bootstrap'
 gem 'jquery-rails'
