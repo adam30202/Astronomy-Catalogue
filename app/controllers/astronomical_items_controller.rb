@@ -12,7 +12,7 @@ class AstronomicalItemsController < ApplicationController
 
   def create
 
-    astronomical_item = AstronomicalItem.new params_astronomical_item #why use create and not .new with .create
+    astronomical_item = AstronomicalItem.new params_astronomical_item
     astronomical_item.user_id = @current_user.id
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])

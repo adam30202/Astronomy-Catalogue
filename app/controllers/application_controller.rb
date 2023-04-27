@@ -1,6 +1,12 @@
 class ApplicationController < ActionController::Base
 
     before_action :fetch_user
+    before_action :set_query
+
+    def set_query
+        @query = AstronomicalItem.ransack(params[:q])
+    end
+
 
     private
     def fetch_user

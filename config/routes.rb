@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'search', :to => "search#index"
   root :to => "pages#about"
   
   get '/astronomycatalogue/your_catalogue' => 'astronomical_items#author_index'

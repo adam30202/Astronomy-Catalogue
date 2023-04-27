@@ -14,7 +14,7 @@ body {
 }
 
 nav {
-    background-image: url(background.jpg);
+    background-image: url(navbackground1.jpg);
     background-size: cover;
     padding-top: 7px;
     padding-bottom: 7px;
@@ -104,4 +104,19 @@ label {
 
 .empty_list {
     text-align: center;
+}
+
+// Search bar CSS
+
+.table {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.search_bar {
+    padding-bottom: 15px;
+}
+
+.table a {
+    text-decoration: underline;
 }
