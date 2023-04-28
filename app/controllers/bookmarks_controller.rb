@@ -3,7 +3,6 @@ class BookmarksController < ApplicationController
     before_action :check_for_login
 
     def show
-        # refactor this/HTML
         @bookmarked_astronomical_items = []
         @current_user.bookmarks.each do |bookmark|
             @bookmarked_astronomical_items.push(AstronomicalItem.find bookmark.astronomical_item_id)

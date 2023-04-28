@@ -14,6 +14,7 @@ Users can search the catalogue for objects already in the database, bookmark obj
 -   Cloudinary - image upload
 -   Bootstrap & CSS
 -   NASA Picture of the Day API
+-   Heroku - Deployment (https://astronomy-catalogue.herokuapp.com/)
 
 ## Website Features
 
